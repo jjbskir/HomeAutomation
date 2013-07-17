@@ -1,0 +1,14 @@
+<html>
+    <head>
+    </head>
+    <body>
+        </body><h1>Type: {{ lamp.name }}</h1>
+        <h1>Last Used: {{ lamp.date }}</h1>
+        <h1>State: {{ lamp.state }}</h1>
+        
+        <form action="/homeautomation/{{ lamp.id }}/buttonProcess/" method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="{{ button }}" />
+        </form>
+    </body>
+</html>
